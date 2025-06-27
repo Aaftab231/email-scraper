@@ -1,6 +1,6 @@
 # 📬 Email Scraper
 
-An advanced, ethical command-line tool to extract emails from websites using multithreading, robots.txt compliance, and filtering options.
+An ethical command-line tool to extract emails from websites using multithreading, robots.txt compliance, and filtering options.
 
 ---
 
