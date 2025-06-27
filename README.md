@@ -22,7 +22,7 @@ An ethical command-line tool to extract emails from websites using multithreadin
 
 ```bash
 # Clone and install locally
-git clone https://github.com/yourusername/email-scraper.git
+git clone https://github.com/Aaftab231/email-scraper.git
 cd email-scraper
 pip install .
 ```
