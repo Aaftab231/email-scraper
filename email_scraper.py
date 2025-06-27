@@ -1,4 +1,3 @@
-# Advanced Email Scraper with Pro Features (with suggestions applied)
 
 import argparse
 import hashlib
