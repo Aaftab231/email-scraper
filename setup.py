@@ -1,11 +1,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="email-scraper-pro",
+    name="email-scraper",
     version="1.0.0",
-    author="Your Name",
-    author_email="you@example.com",
-    description="Advanced CLI tool for scraping emails ethically and efficiently",
+    author_email="aaftab231@gmail.com",
+    description="CLI tool for scraping emails ethically and efficiently",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     packages=find_packages(),
