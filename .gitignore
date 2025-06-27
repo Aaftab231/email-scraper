@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+email_scraper.log
+.env
+*.egg-info/
+dist/
+build/

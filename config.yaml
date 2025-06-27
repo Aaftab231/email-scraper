@@ -1,0 +1,25 @@
+# Target website URL to begin crawling
+url: "https://example.com"
+
+# Maximum number of pages to crawl
+max: 100
+
+# Output file and format (options: txt, csv, json)
+output: "results.json"
+format: "json"
+
+# Number of concurrent threads
+threads: 10
+
+# Filter emails using these keywords (optional)
+keywords:
+  - admin
+  - hr
+  - support
+
+# Optional CLI flags
+timeout: 5           # Timeout for requests in seconds
+quiet: false         # If true, suppress output (overrides verbose)
+verbose: true        # If true, show each email found and progress
+dry_run: false       # If true, simulate crawling without actual requests
+scope_only: true     # If true, restrict crawling to the base domain
