@@ -177,8 +177,10 @@ def crawl(start_url, max_urls, output_file, output_format, threads, keywords, dr
                                 if (not scope_only) or link.startswith(start_url):
                                     if hash_url(link) not in visited_hashes:
                                         urls.append(link)
-
+                    except Exception as e:
+                        logging.error(f"[ERROR] {url} - {e}")
                 time.sleep(random.uniform(1, 2))  # pause between crawl waves
+
 
     except KeyboardInterrupt:
         print("\n[!] Manual interruption. Exiting...")
@@ -217,17 +219,17 @@ def load_config(path):
 def main():
     parser = argparse.ArgumentParser(description="Pro Email Scraper")
     parser.add_argument("url", nargs="?", help="Starting URL")
-    parser.add_argument("--config", help="YAML config file")
-    parser.add_argument("--max", type=int, default=50, help="Max pages to crawl")
-    parser.add_argument("--output", help="Output filename")
-    parser.add_argument("--format", choices=['txt', 'csv', 'json'], default='txt', help="Output format")
-    parser.add_argument("--threads", type=int, default=5)
-    parser.add_argument("--keywords", help="Comma-separated keywords (e.g. admin,hr)")
-    parser.add_argument("--dry-run", action="store_true", help="Preview URLs without crawling")
-    parser.add_argument("--verbose", action="store_true")
-    parser.add_argument("--scope-only", action="store_true")
-    parser.add_argument("--quiet", action="store_true", help="Suppress output to console")
-    parser.add_argument("--timeout", type=int, default=5, help="Request timeout in seconds")
+    parser.add_argument("-c", "--config", help="YAML config file")
+    parser.add_argument("-m", "--max", type=int, default=50, help="Max pages to crawl")
+    parser.add_argument("-o", "--output", help="Output filename")
+    parser.add_argument("-f", "--format", choices=['txt', 'csv', 'json'], default='txt', help="Output format")
+    parser.add_argument("-t", "--threads", type=int, default=5, help="Number of threads")
+    parser.add_argument("-k", "--keywords", help="Comma-separated keywords (e.g. admin,hr)")
+    parser.add_argument("-d", "--dry-run", action="store_true", help="Preview URLs without crawling")
+    parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
+    parser.add_argument("-s", "--scope-only", action="store_true", help="Restrict to starting domain")
+    parser.add_argument("-q", "--quiet", action="store_true", help="Suppress output to console")
+    parser.add_argument("-T", "--timeout", type=int, default=5, help="Request timeout in seconds")
 
     args = parser.parse_args()
 
